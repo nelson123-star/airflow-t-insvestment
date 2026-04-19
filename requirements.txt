@@ -1,0 +1,11 @@
+clickhouse-connect
+apache-airflow-providers-apache-spark
+apache-airflow-providers-postgres
+apache-airflow-providers-amazon
+airflow-clickhouse-plugin 
+minio 
+boto3 
+pandas
+numpy
+kagglehub
+

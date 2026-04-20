@@ -64,12 +64,13 @@ Thumbs.db
 
 # Локальные файлы и папки
 .env
+.env*
 .env.local
 .env.*.local
 *.log
 пометки_конспект.md  # ваши заметки
 variables.json
-command_list/*
+command_list/
 
 # MinIO локальные данные
 minio/data/

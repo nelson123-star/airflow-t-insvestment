@@ -89,5 +89,8 @@ command_list  # если это временный файл команд
 
 # Generated файлы
 *.csv
+*.json
 *.jsonl
 *.parquet
+
+.gitignore

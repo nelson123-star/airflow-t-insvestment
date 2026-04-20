@@ -21,4 +21,4 @@
 
 Для мониторинга стоимости используем Api Т-Инвестиции. Необходимо быть его клиентом и получить токен. Токен можно получить на [официальном сайте T-Банка](https://developer.tbank.ru/invest/intro/intro/token)
 
-![Токен](galary/T-bank_token.png)
+![Токен](images/T-bank_token.png)

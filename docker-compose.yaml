@@ -278,7 +278,7 @@ services:
 
   postgres_users:
     image: postgres:15
-    container_name: airflow_postgres_users
+    container_name: postgres_airflow_stocks
     environment:
       POSTGRES_USER: ${POSTGRES_ROOT_USER}
       POSTGRES_PASSWORD: ${POSTGRES_ROOT_PWD}
@@ -291,7 +291,7 @@ services:
 
   minio:
     image: quay.io/minio/aistor/minio
-    container_name: minio_airflow
+    container_name: minio_airflow_stocks
     ports:
       - "9002:9002"  # S3 API
       - "9003:9003"  # Web Console
@@ -307,7 +307,7 @@ services:
 
   clickhouse:
     image: clickhouse/clickhouse-server:25.6
-    container_name: clickhouse
+    container_name: clickhouse_airflow_stocks
     ports:
       - "8123:8123"
       - "9000:9000"

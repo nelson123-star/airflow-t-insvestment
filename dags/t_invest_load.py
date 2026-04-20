@@ -54,7 +54,7 @@ def get_stock_price(token:str):
         # print(get_tinkoff_last_prices(token=TOKEN, df=df))
 
         date = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-        filename = f"/opt/airflow/dags/Scripts/Temp/{date}.json"
+        filename = f"/opt/airflow/dags/Temp/{date}.json"
         shares.to_json(path_or_buf=filename, orient='records', indent=4)
 
         return {"file_name": f"{date}.json"}
@@ -107,7 +107,7 @@ def upload_to_minio(**context):
             return None
         else:
             print(f"file_name: {file_name}")
-        tmp_file_path = f"/opt/airflow/dags/Scripts/Temp/{file_name["file_name"]}"
+        tmp_file_path = f"/opt/airflow/dags/Temp/{file_name["file_name"]}"
         execution_date = file_name["file_name"]
 
         if not tmp_file_path:

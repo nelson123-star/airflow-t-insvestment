@@ -32,3 +32,11 @@ cd DE_projects && mkdir airflow-docker-2 && cp -r /home/ya_esteroot/airflow-dock
 cd DE_projects && mkdir airflow-docker-2 && cp -r /home/ya_esterootairflow-docker/* /home/ya_esteroot/DE_projects/airflow-docker-2/
 
 mkdir airflow-t-insvestment && cp -r /home/ya_esteroot/DE_projects/airflow-docker-2/* /home/ya_esteroot/DE_projects/airflow-t-insvestment/
+
+
+
+ssh-keygen -t ed25519 -C "vl301297@gmail.com"
+
+Запуск SSH-агента и добавление ключа
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/id_rsa

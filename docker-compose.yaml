@@ -52,7 +52,7 @@ services:
       interval: 10s
       retries: 5
       start_period: 5s
-    restart: always
+    restart: no
 
   redis:
     image: redis:7.2-bookworm
@@ -64,7 +64,7 @@ services:
       timeout: 30s
       retries: 50
       start_period: 30s
-    restart: always
+    restart: no
 
   airflow-apiserver:
     <<: *airflow-common
@@ -77,7 +77,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    restart: no
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -92,7 +92,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    restart: no
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -107,7 +107,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    restart: no
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -128,7 +128,7 @@ services:
     environment:
       <<: *airflow-common-env
       DUMB_INIT_SETSID: "0"
-    restart: always
+    restart: no
     depends_on:
       <<: *airflow-common-depends-on
       airflow-apiserver:
@@ -145,7 +145,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    restart: no
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -270,7 +270,7 @@ services:
       timeout: 10s
       retries: 5
       start_period: 30s
-    restart: always
+    restart: no
     depends_on:
       <<: *airflow-common-depends-on
       airflow-init:
@@ -287,7 +287,7 @@ services:
       - "5542:5432"
     volumes:
       - postgres_users_data_volume:/var/lib/postgresql/data 
-    restart: always
+    restart: no
 
   minio:
     image: quay.io/minio/aistor/minio
@@ -303,7 +303,7 @@ services:
       - ./minio/minio.license:/minio.license
       - ./minio/certs:/etc/minio/certs
     command: server /data --console-address ":9003"
-    restart: always
+    restart: no
 
   clickhouse:
     image: clickhouse/clickhouse-server:25.6
@@ -315,7 +315,7 @@ services:
       - clickhouse-logs:/var/log/clickhouse-server
       - clickhouse-data:/var/lib/clickhouse
       - ./clickhouse/users.xml:/etc/clickhouse-server/users.xml
-    restart: always
+    restart: no
 
 volumes:
   postgres-db-volume:
